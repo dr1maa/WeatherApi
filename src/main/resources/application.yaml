@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+weatherapi:
+  base-url: https://api.weatherapi.com/v1
+  api-key: YOUR_API_KEY
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/weatherdb
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    root: info
+    org.hibernate.SQL: debug
+    org.springframework: debug
